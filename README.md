@@ -1,103 +1,356 @@
-🤖 AI Recruiter Agency
-Python Streamlit Gemini AI License
+# AI Recruiter Agency 🤖
 
-AI Recruiter Agency is an intelligent, multi-agent recruitment system built using Google Gemini 1.5 and Streamlit.
-It automates the candidate evaluation process through a pipeline of specialized AI agents that extract, analyze, match, screen, and recommend candidates using their PDF resumes.
+An intelligent **Multi-Agent AI Recruitment System** built using **Python, Streamlit, and Google Gemini AI**.
+The platform automates resume evaluation by extracting, analyzing, matching, screening, and recommending candidates using AI-powered agents.
 
-📖 Table of Contents
-Architecture
-Key Features
-Installation
-Configuration
-Agent Workflow
-🏗 Architecture
-The system follows a sequential multi-agent architecture, all managed by a central Orchestrator.
+---
 
-Architecture Diagram
+## 📌 Features
 
-✨ Key Features
-📄 PDF Resume Parsing
-Uses pdfminer.six to extract clean text from PDF resumes with high accuracy.
+* 📄 Resume PDF Parsing
+* 🧠 AI-Powered Candidate Analysis
+* 🎯 Intelligent Job Matching
+* 🛡 HR Screening & Evaluation
+* 💡 Final Hiring Recommendation
+* 📊 Interactive Streamlit Dashboard
+* ⚡ Multi-Agent Architecture
+* 🤖 Powered by Google Gemini 1.5
 
-🔍 Deep Skill Analysis
-The Analyzer Agent evaluates:
+---
 
-Technical skills
-Experience level
-Education
-Project relevance
-Domain expertise
-🎯 Intelligent Job Matching
-The Matcher Agent compares candidate strengths with job descriptions to generate:
+# 📖 Table of Contents
 
-Skill match percentage
-Experience alignment
-Domain compatibility
-🛡 Automated HR Screening
-The Screener Agent performs qualitative analysis:
+* [Architecture](#-architecture)
+* [Project Workflow](#-project-workflow)
+* [Key Features](#-key-features)
+* [Tech Stack](#-tech-stack)
+* [Installation](#-installation)
+* [Configuration](#-configuration)
+* [Usage](#-usage)
+* [Folder Structure](#-folder-structure)
+* [Future Improvements](#-future-improvements)
+* [License](#-license)
 
-Detects red flags
-Identifies missing skills
-Evaluates cultural fit
-Checks communication clarity
-💡 Final Recommendation
-The Recommender Agent provides a decision:
+---
 
-✔ Hire
-❌ No Hire
-Suggestions for improvement
-Recommended job roles
-📊 Interactive UI
-A modern Streamlit Web Interface to visualize:
+# 🏗 Architecture
 
-Resume text
-Skill breakdown
-Job matching score
-Screening summary
-Final verdict
-⚙ Configuration
-To run the AI agents, configure your Gemini API Key.
+The project follows a **Sequential Multi-Agent Architecture** managed by a central **Orchestrator Agent**.
+
+Each agent performs a specialized task in the recruitment pipeline.
+
+```text
+                ┌────────────────────┐
+                │   Streamlit UI     │
+                └─────────┬──────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │  Orchestrator      │
+                └─────────┬──────────┘
+                          │
+        ┌─────────────────┼─────────────────┐
+        ▼                 ▼                 ▼
+┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│ Extractor    │  │ Analyzer     │  │ Matcher      │
+│ Agent        │  │ Agent        │  │ Agent        │
+└──────────────┘  └──────────────┘  └──────────────┘
+                          │
+                          ▼
+                ┌────────────────────┐
+                │ Screener Agent     │
+                └─────────┬──────────┘
+                          ▼
+                ┌────────────────────┐
+                │ Recommender Agent  │
+                └────────────────────┘
+```
+
+---
+
+# 🚀 Project Workflow
+
+## 1️⃣ Extractor Agent
+
+* Reads uploaded PDF resumes
+* Extracts raw text using `pdfminer.six`
+
+## 2️⃣ Analyzer Agent
+
+Analyzes:
+
+* Technical skills
+* Education
+* Experience
+* Certifications
+* Projects
+* Domain expertise
+
+## 3️⃣ Matcher Agent
+
+Compares:
+
+* Resume skills
+* Job description
+* Experience level
+
+Generates:
+
+* Match percentage
+* Skill alignment score
+* Domain compatibility
+
+## 4️⃣ Screener Agent
+
+Performs:
+
+* HR-level screening
+* Communication analysis
+* Red-flag detection
+* Missing skill detection
+* Culture-fit estimation
+
+## 5️⃣ Recommender Agent
+
+Provides:
+
+* ✔ Hire / ❌ No Hire decision
+* Improvement suggestions
+* Recommended roles
+
+---
+
+# ✨ Key Features
+
+## 📄 PDF Resume Parsing
+
+Uses **pdfminer.six** for accurate PDF text extraction.
+
+## 🔍 Deep Skill Analysis
+
+AI analyzes:
+
+* Programming languages
+* Frameworks
+* Databases
+* Cloud skills
+* Experience level
+
+## 🎯 Intelligent Job Matching
+
+Compares resumes with job requirements and generates:
+
+* Skill match %
+* Experience score
+* Relevance score
+
+## 🛡 Automated HR Screening
+
+Detects:
+
+* Weak communication
+* Missing skills
+* Inconsistencies
+* Red flags
+
+## 💡 Final Recommendation
+
+Provides:
+
+* Final verdict
+* Hiring confidence
+* Suggested job roles
+
+## 📊 Interactive Dashboard
+
+Built with Streamlit for:
+
+* Resume upload
+* AI evaluation
+* Visualization
+* Candidate insights
+
+---
+
+# 🛠 Tech Stack
+
+| Component    | Technology         |
+| ------------ | ------------------ |
+| Language     | Python 3.10+       |
+| Frontend     | Streamlit          |
+| AI Model     | Google Gemini 1.5  |
+| PDF Parsing  | pdfminer.six       |
+| Architecture | Multi-Agent System |
+
+---
+
+# ⚙ Installation
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/UdaySimhadrii/Multi-agent-Ai-Recuritment-agent.git
+cd Multi-agent-Ai-Recuritment-agent
+```
+
+## 2️⃣ Create Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Linux / Mac
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+## 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 🔑 Configuration
 
 Open:
+
+```bash
 agents/base_agent.py
-Find the variable:
+```
 
+Find:
+
+```python
 HARDCODED_API_KEY = "YOUR_KEY_HERE"
+```
 
+Replace with your actual Gemini API key:
 
-Replace "YOUR_KEY_HERE" with your actual Gemini API key.
+```python
+HARDCODED_API_KEY = "AIzaSyXXXXXXXXXXXX"
+```
 
-🚀 Agent Workflow
-1. Extractor Agent
+---
 
-Reads and extracts raw text from the uploaded PDF.
+# ▶ Usage
 
-2. Analyzer Agent
+Run the Streamlit app:
 
-Identifies skills, education, experience, and strengths.
+```bash
+streamlit run app.py
+```
 
-3. Matcher Agent
+Open browser:
 
-Compares candidate profile with open job roles.
+```text
+http://localhost:8501
+```
 
-Generates match scores.
+---
 
-4. Screener Agent
+# 📂 Folder Structure
 
-Performs soft-skill & HR-level evaluation.
+```text
+AI-Recruiter-Agency/
+│
+├── agents/
+│   ├── base_agent.py
+│   ├── extractor_agent.py
+│   ├── analyzer_agent.py
+│   ├── matcher_agent.py
+│   ├── screener_agent.py
+│   └── recommender_agent.py
+│
+├── orchestrator/
+│   └── orchestrator.py
+│
+├── utils/
+│   └── pdf_parser.py
+│
+├── app.py
+├── requirements.txt
+└── README.md
+```
 
-Flags concerns or inconsistencies.
+---
 
-5. Recommender Agent
+# 📈 Example Output
 
-Summarizes all results.
+```text
+Candidate Name: John Doe
 
-Provides the final Hire / No Hire decision.
+Skills:
+✔ Python
+✔ React
+✔ Node.js
+✔ MongoDB
 
-📌 Tech Stack
-Component	Technology
-Language	Python 3.10+
-Framework	Streamlit
-AI Model	Google Gemini 1.5
-PDF Parsing	pdfminer.six
-Architecture	Multi-Agent Orchestration
+Match Score: 87%
+
+HR Screening:
+✔ Strong communication
+✔ Relevant projects
+❌ Missing AWS experience
+
+Final Recommendation:
+✔ Hire
+```
+
+---
+
+# 🔮 Future Improvements
+
+* Multi-resume batch processing
+* Resume ranking leaderboard
+* Interview question generation
+* ATS score generation
+* LinkedIn profile analysis
+* Voice interview AI agent
+* Docker deployment
+* Authentication system
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Push to branch
+5. Open Pull Request
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Tadaka Uday Simhadri**
+
+* Python Developer
+* AI Enthusiast
+* MERN Stack Developer
+* Cybersecurity Aspirant
+
+---
+
+# ⭐ Support
+
+If you like this project:
+
+⭐ Star the repository
+🍴 Fork the project
+📢 Share with others
